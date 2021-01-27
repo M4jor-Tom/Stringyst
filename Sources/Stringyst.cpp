@@ -1,5 +1,8 @@
 #include "../Headers/Stringyst.h"
 
+#include <sstream>
+#include <iterator>
+
 using namespace std;
  
 string ltrim(const string &_string, const string &mask)
@@ -28,4 +31,31 @@ string trim(const string &_string, const string &mask)
 {
     //Return string from borders kept characters only if wanted characters exist
     return rtrim(ltrim(_string, mask), mask);
+}
+
+
+list<string> explode(const string &separator, const string &str)
+{
+    list<string> ret;
+
+    /*size_t firstSeparatorPos = str.find(separator, 0);
+    
+    ret.push_front(
+        str.substr(
+            0,
+            firstSeparatorPos
+        )
+    );
+
+    ret.merge(
+        explode(
+            separator,
+            str.substr(
+                firstSeparatorPos,
+                str.size() - firstSeparatorPos
+            )
+        )
+    );*/
+
+    return ret;
 }
