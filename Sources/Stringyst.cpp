@@ -67,9 +67,11 @@ list<string> lExplode(const string &separator, const string &str)
     return ret;
 }
 
-vector<string> vExplode(const string &separator, const string &str)
+vector<string> vExplode(const string &separator, const string &str, bool reverse = false)
 {
     list<string> listExplode = lExplode(separator, str);
+    if(reverse)
+        listExplode.reverse();
     vector<string> ret(listExplode.begin(), listExplode.end());
     return ret;
 }

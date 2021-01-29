@@ -7,8 +7,7 @@ using namespace std;
 int main()
 {
 	
-	list<string> exploded = lExplode(".", "192.168.100.1");
-	exploded.reverse();
+	vector<string> exploded = vExplode(".", "192.168.100.1", true);
 	
 	cout
 		<< "Trim test:" << endl
