@@ -10,4 +10,5 @@ std::string trim(const std::string &_string, const std::string &mask);
 
 std::list<std::string> lExplode(const std::string &separator, const std::string &str);
 
+std::vector<std::string> vExplode(const std::string &separator, const std::string &str);
 std::vector<std::string> vExplode(const std::string &separator, const std::string &str, bool reverse);
