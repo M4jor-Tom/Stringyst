@@ -6,10 +6,10 @@ using namespace std;
 
 int main()
 {
-	
+	string toExplode = "a.z.e.r.t.y.u.i.o.p";
 	vector<string>
-		rExploded = vExplode(".", "192.168.100.1"),
-		exploded = vExplode(".", "192.168.100.1", true);
+		rExploded = vExplode(".", toExplode),
+		exploded = vExplode(".", toExplode, true);
 	
 	cout
 		<< "Trim test:" << endl
@@ -17,6 +17,7 @@ int main()
 		<< "Explode test:" << endl;
 	for(string e : exploded)
 		cout << e << ";";
+	cout << endl;
 	for(string e : rExploded)
 		cout << e << ";";
 	return 0;

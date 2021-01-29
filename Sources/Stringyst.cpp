@@ -36,35 +36,29 @@ string trim(const string &_string, const string &mask)
 
 list<string> lExplode(const string &separator, const string &str)
 {
-    list<string> ret;
-
     size_t firstSeparatorPos = str.find(separator);
     
     if (firstSeparatorPos == string::npos)
     {
-        ret.push_back(str);
-        return ret;
+        list<string> leaf;
+        leaf.push_back(str);
+        return leaf;
     }
     
-    
-    ret.push_front(
+    string sub = str.substr(
+        0,
+        firstSeparatorPos
+    );
+
+    list<string> _lExplode = lExplode(
+        separator,
         str.substr(
-            0,
-            firstSeparatorPos
+            firstSeparatorPos + separator.size(),
+            str.size() - firstSeparatorPos
         )
     );
-
-    ret.merge(
-        lExplode(
-            separator,
-            str.substr(
-                firstSeparatorPos + separator.size(),
-                str.size() - firstSeparatorPos
-            )
-        )
-    );
-
-    return ret;
+    _lExplode.push_back(sub);
+    return _lExplode;
 }
 
 vector<string> vExplode(const string &separator, const string &str)
