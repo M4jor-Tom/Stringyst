@@ -41,7 +41,7 @@ list<string> lExplode(const string &separator, const string &str)
     if (firstSeparatorPos == string::npos)
     {
         list<string> leaf;
-        leaf.push_back(str);
+        leaf.push_front(str);
         return leaf;
     }
     
@@ -57,7 +57,7 @@ list<string> lExplode(const string &separator, const string &str)
             str.size() - firstSeparatorPos
         )
     );
-    _lExplode.push_back(sub);
+    _lExplode.push_front(sub);
     return _lExplode;
 }
 
