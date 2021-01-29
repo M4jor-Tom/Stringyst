@@ -1,7 +1,7 @@
-OBJS	= stringystTest.o Stringyst.o
-SOURCE	= stringystTest.cpp Sources/Stringyst.cpp
+OBJS	= test.o Stringyst.o
+SOURCE	= test.cpp Sources/Stringyst.cpp
 HEADER	= Headers/Stringyst.h
-OUT	= stringystTest
+OUT	= test
 CC	 = g++
 FLAGS	 = -g -c -Wall
 LFLAGS	 = 
@@ -9,8 +9,8 @@ LFLAGS	 =
 all: $(OBJS)
 	$(CC) -g $(OBJS) -o $(OUT) $(LFLAGS)
 
-stringystTest.o: stringystTest.cpp
-	$(CC) $(FLAGS) stringystTest.cpp 
+test.o: test.cpp
+	$(CC) $(FLAGS) test.cpp 
 
 Stringyst.o: Sources/Stringyst.cpp
 	$(CC) $(FLAGS) Sources/Stringyst.cpp 

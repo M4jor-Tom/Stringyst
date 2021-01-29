@@ -6,7 +6,15 @@ using namespace std;
 
 int main()
 {
-	for (string piece : explode(";", "--1;2;3;4;5--"))
-		cout << piece << endl;
+	
+	list<string> exploded = lExplode(".", "192.168.100.1");
+	exploded.reverse();
+	
+	cout
+		<< "Trim test:" << endl
+		<< trim("bad bad bad success not good", " badnotgood") << endl << endl
+		<< "Explode test:" << endl;
+	for(string e : exploded)
+		cout << e << ";";
 	return 0;
 }

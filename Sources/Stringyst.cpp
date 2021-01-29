@@ -2,7 +2,6 @@
 
 #include <sstream>
 #include <iterator>
-#include <iostream>
 
 using namespace std;
  
@@ -35,7 +34,7 @@ string trim(const string &_string, const string &mask)
 }
 
 
-list<string> explode(const string &separator, const string &str)
+list<string> lExplode(const string &separator, const string &str)
 {
     list<string> ret;
 
@@ -47,6 +46,7 @@ list<string> explode(const string &separator, const string &str)
         return ret;
     }
     
+    
     ret.push_front(
         str.substr(
             0,
@@ -55,7 +55,7 @@ list<string> explode(const string &separator, const string &str)
     );
 
     ret.merge(
-        explode(
+        lExplode(
             separator,
             str.substr(
                 firstSeparatorPos + separator.size(),
@@ -64,5 +64,12 @@ list<string> explode(const string &separator, const string &str)
         )
     );
 
+    return ret;
+}
+
+vector<string> vExplode(const string &separator, const string &str)
+{
+    list<string> listExplode = lExplode(separator, str);
+    vector<string> ret(listExplode.begin(), listExplode.end());
     return ret;
 }
