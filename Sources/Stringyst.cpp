@@ -2,6 +2,7 @@
 
 #include <sstream>
 #include <iterator>
+#include <iostream>
 
 using namespace std;
  
@@ -38,7 +39,13 @@ list<string> explode(const string &separator, const string &str)
 {
     list<string> ret;
 
-    /*size_t firstSeparatorPos = str.find(separator, 0);
+    size_t firstSeparatorPos = str.find(separator);
+    
+    if (firstSeparatorPos == string::npos)
+    {
+        ret.push_back(str);
+        return ret;
+    }
     
     ret.push_front(
         str.substr(
@@ -51,11 +58,11 @@ list<string> explode(const string &separator, const string &str)
         explode(
             separator,
             str.substr(
-                firstSeparatorPos,
+                firstSeparatorPos + separator.size(),
                 str.size() - firstSeparatorPos
             )
         )
-    );*/
+    );
 
     return ret;
 }
