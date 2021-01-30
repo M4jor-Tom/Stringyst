@@ -20,5 +20,14 @@ int main()
 	cout << endl;
 	for(string e : rExploded)
 		cout << e << ";";
+	
+	string str;
+	cout
+		<< endl << endl
+		<< (str = "1234") << " is a number:" << endl
+		<< (str_isdigit(str) ? "yes" : "no") << endl
+		<< (str = "123abc") << " is a number:" << endl
+		<< (str_isdigit(str) ? "yes" : "no") << endl;
+
 	return 0;
 }

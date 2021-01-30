@@ -74,3 +74,13 @@ vector<string> vExplode(const string &separator, const string &str, bool reverse
     vector<string> ret(listExplode.begin(), listExplode.end());
     return ret;
 }
+
+bool str_isdigit(const string &str)
+{
+    size_t i;
+    for(i = 0; i < str.size(); i++)
+        if(!isdigit(str[i]))
+            return false;
+
+    return true;
+}

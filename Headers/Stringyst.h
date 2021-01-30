@@ -12,3 +12,5 @@ std::list<std::string> lExplode(const std::string &separator, const std::string 
 
 std::vector<std::string> vExplode(const std::string &separator, const std::string &str);
 std::vector<std::string> vExplode(const std::string &separator, const std::string &str, bool reverse);
+
+bool str_isdigit(const std::string &str);
